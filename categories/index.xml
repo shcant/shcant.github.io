@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on The Critique of Pure Reason and Feeling</title>
+    <link>https://shcant.github.io/categories/</link>
+    <description>Recent content in Categories on The Critique of Pure Reason and Feeling</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Copyright © 2020, YinShuhao; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 03 Mar 2018 22:32:16 +0800</lastBuildDate>
+    
+	<atom:link href="https://shcant.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>web</title>
+      <link>https://shcant.github.io/categories/web/</link>
+      <pubDate>Sat, 03 Mar 2018 22:32:16 +0800</pubDate>
+      
+      <guid>https://shcant.github.io/categories/web/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

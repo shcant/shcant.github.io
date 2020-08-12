@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on The Critique of Pure Reason and Feeling</title>
+    <link>https://shcant.github.io/categories/web/</link>
+    <description>Recent content in web on The Critique of Pure Reason and Feeling</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Copyright © 2020, YinShuhao; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 03 Mar 2018 22:32:16 +0800</lastBuildDate>
+    
+	<atom:link href="https://shcant.github.io/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何调试Typescript源代码</title>
+      <link>https://shcant.github.io/post/typescript-debug/</link>
+      <pubDate>Sat, 03 Mar 2018 22:32:16 +0800</pubDate>
+      
+      <guid>https://shcant.github.io/post/typescript-debug/</guid>
+      <description>最近在学习TypeScript，所以从 Github 上把项目扒了下来准备观摩一下。虽然调试的时候遇到了一些小麻烦，不过TypeScript的文档已经算是维护的相当好了。调试主要参考：
+https://github.com/Microsoft/TypeScript/wiki/Debugging-Language-Service-in-VS-Code
+说到 Language Service，这是一个比较有趣的概念。传统的编译器结构针对的是已经完成的合法代码，而在现代的 IDE 中包含了诸如重构、提示等各种针对未完成输入的功能，这导致了二者架构的分离。Language Service 把编译器分成了 C/S 的架构。在 Channel9 有一个 Anders Hejlsberg 简述现代编译器是如何集成这些功能的视频。这个人有多厉害微软粉们都知道，在 90 年代就被盖茨 300w 美金的年薪挖角，主导了C#编译器的设计……这应该就是做技术的最高境界了吧。这个视频作为想了解这些 IDE 功能是如何实现的程序员来说是个不错的引子。
+Anders Hejlsberg 其实首先在Rosyln，也就是最新一代的C#编译器上实现了上述的大一统。这里就引出另一个和 TypeScript 相似的项目OmniSharp，但是知名度和TypeScript就逊色许多。C#日薄西山啊(:з)∠)_。
+因为 Language Service 一分为二，Client 和 Server 端的调试方式不同。首先在 Github 上克隆TypeScript的代码至本地并安装依赖的包。
+1npm install TypeScript可以使用gulp构建：
+1gulp local # Build the compiler into built/local 2gulp clean # Delete the built compiler 3gulp help # List the above commands 还有其他例如测试相关的命令可以通过gulp help查看。考虑到文档的滞后性这里就不一一列出了。
+standalone 如果是调试独立编译器（Standalone compiler）的话，其实和调试其他TypeScript代码是完全相似的，只需要设置sourceMap即可。不过这里就遇到了我的第一个问题——build 生成的*.js.map文件不正确。虽然这个问题已经在文档里清晰的提及并链接到了对应的issue，而且还有了替代方案jake，但是为什么没有得到解决我还是很好奇的（姑且认为是gulp的锅了）。
+运行jake作为gulp的替代（这里npm scripts中已经写好了该任务）：</description>
+    </item>
+    
+  </channel>
+</rss>
