@@ -3,28 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://shcant.github.io/archives/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://shcant.github.io/</loc>
-    <lastmod>2018-03-03T22:32:16+08:00</lastmod>
+    <lastmod>2019-06-20T20:21:10+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://shcant.github.io/categories/</loc>
-    <lastmod>2018-03-03T22:32:16+08:00</lastmod>
+    <lastmod>2019-06-20T20:21:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shcant.github.io/categories/distributed-systems/</loc>
+    <lastmod>2019-06-20T20:21:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shcant.github.io/tags/gfs/</loc>
+    <lastmod>2019-06-20T20:21:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shcant.github.io/2019/06/google-file-system/</loc>
+    <lastmod>2019-06-20T20:21:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shcant.github.io/tags/paper/</loc>
+    <lastmod>2019-06-20T20:21:10+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://shcant.github.io/post/</loc>
-    <lastmod>2018-03-03T22:32:16+08:00</lastmod>
+    <lastmod>2019-06-20T20:21:10+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://shcant.github.io/tags/</loc>
-    <lastmod>2018-03-03T22:32:16+08:00</lastmod>
+    <lastmod>2019-06-20T20:21:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shcant.github.io/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -43,7 +63,7 @@
   </url>
   
   <url>
-    <loc>https://shcant.github.io/post/typescript-debug/</loc>
+    <loc>https://shcant.github.io/2018/03/typescript-debug/</loc>
     <lastmod>2018-03-03T22:32:16+08:00</lastmod>
   </url>
   

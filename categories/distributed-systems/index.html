@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="">
-  <head>  <title>Tags | The Critique of Pure Reason and Feeling</title>
+  <head>  <title>Distributed Systems | The Critique of Pure Reason and Feeling</title>
   <meta charset='utf-8'>
   <meta name="generator" content="Hugo 0.75.0-DEV" />
   <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
@@ -17,9 +17,9 @@
 <meta name="description" content="">
 <meta name = "twitter:card" content = "summary" />
 <meta name = "twitter:creator" content = "">
-<meta name = "twitter:title" content = "Tags" />
-<meta property = "og:url" content = "https://shcant.github.io/tags/" />
-<meta property = "og:title" content = "Tags" />
+<meta name = "twitter:title" content = "Distributed Systems" />
+<meta property = "og:url" content = "https://shcant.github.io/categories/distributed-systems/" />
+<meta property = "og:title" content = "Distributed Systems" />
 <meta property = "og:description" content = "" />
 <meta property = "og:image" content = "https://shcant.github.io/images/thumbnail.png" />
 <link rel='apple-touch-icon' sizes='180x180' href='https://shcant.github.io/icons/apple-touch-icon.png'>
@@ -30,7 +30,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-  <link rel='canonical' href='https://shcant.github.io/tags/'>
+  <link rel='canonical' href='https://shcant.github.io/categories/distributed-systems/'>
 
     
 
@@ -105,7 +105,7 @@
   <div class = 'excerpt'>
     <div class = 'excerpt_header'>
       <h3 class = 'post_link'>
-        <a href='https://shcant.github.io/tags/gfs/'>GFS</a>
+        <a href='https://shcant.github.io/2019/06/google-file-system/'>Google File System 论文</a>
       </h3>
       <div class = 'post_meta'>
   <svg class="icon">
@@ -113,88 +113,19 @@
   </svg>
   <span class="post_date">
     Jun 20, 2019</span>
+  <a href = 'https://shcant.github.io/tags/gfs' class = 'post_tag button button_translucent'>GFS
+  </a>
+  <a href = 'https://shcant.github.io/tags/paper' class = 'post_tag button button_translucent'>Paper
+  </a>
 </div>
 
     </div>
       <div class = 'excerpt_footer'>
         <div>
-          <p class = 'pale'></p>
-          <a href='https://shcant.github.io/tags/gfs/' class='excerpt_more button'>Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-  
-      
-<li class = 'post_item'>
-  <div class = 'excerpt'>
-    <div class = 'excerpt_header'>
-      <h3 class = 'post_link'>
-        <a href='https://shcant.github.io/tags/paper/'>Paper</a>
-      </h3>
-      <div class = 'post_meta'>
-  <svg class="icon">
-    <use xlink:href="#calendar"></use>
-  </svg>
-  <span class="post_date">
-    Jun 20, 2019</span>
-</div>
-
-    </div>
-      <div class = 'excerpt_footer'>
-        <div>
-          <p class = 'pale'></p>
-          <a href='https://shcant.github.io/tags/paper/' class='excerpt_more button'>Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-  
-      
-<li class = 'post_item'>
-  <div class = 'excerpt'>
-    <div class = 'excerpt_header'>
-      <h3 class = 'post_link'>
-        <a href='https://shcant.github.io/tags/typescript/'>TypeScript</a>
-      </h3>
-      <div class = 'post_meta'>
-  <svg class="icon">
-    <use xlink:href="#calendar"></use>
-  </svg>
-  <span class="post_date">
-    Mar 3, 2018</span>
-</div>
-
-    </div>
-      <div class = 'excerpt_footer'>
-        <div>
-          <p class = 'pale'></p>
-          <a href='https://shcant.github.io/tags/typescript/' class='excerpt_more button'>Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-  
-      
-<li class = 'post_item'>
-  <div class = 'excerpt'>
-    <div class = 'excerpt_header'>
-      <h3 class = 'post_link'>
-        <a href='https://shcant.github.io/tags/vscode/'>VSCode</a>
-      </h3>
-      <div class = 'post_meta'>
-  <svg class="icon">
-    <use xlink:href="#calendar"></use>
-  </svg>
-  <span class="post_date">
-    Mar 3, 2018</span>
-</div>
-
-    </div>
-      <div class = 'excerpt_footer'>
-        <div>
-          <p class = 'pale'></p>
-          <a href='https://shcant.github.io/tags/vscode/' class='excerpt_more button'>Read More</a>
+          <p class = 'pale'>推荐最近看到的一本 OceanBase 大佬写的书1，还有这篇文章2，配合论文会更有收获。本书虽是 13 年写的，但对于许多主流的技术均有涉及，作者本人的功力也是非常深厚的。
+ 在论文摘要部分中给出了 GFS 的 4 个决策依据：
+ 组件的失败是频繁的。包括磁盘、内存、网络、系统，甚至人为因素。计算机是不可信的。 文件系统中的文件很大（GB 以上）。这一点决定了之后的一些设计决策，比如块的大小。对于谷歌而言，这是非常自然的，因为谷歌的搜索依赖于倒排索引，数量非常巨大。不过，这个假设时至今日已经不再有力，所以不论是谷歌还是阿里都有自己支持小文件的分布式文件系统。 大部分文件都是追加而非修改操作。不存在随机的数据写入。 …</p>
+          <a href='https://shcant.github.io/2019/06/google-file-system/' class='excerpt_more button'>Read More</a>
         </div>
       </div>
     </div>

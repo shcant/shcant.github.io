@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Paper on The Critique of Pure Reason and Feeling</title>
+    <link>https://shcant.github.io/tags/paper/</link>
+    <description>Recent content in Paper on The Critique of Pure Reason and Feeling</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Copyright © 2020, YinShuhao; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 20 Jun 2019 20:21:10 +0800</lastBuildDate>
+    
+	<atom:link href="https://shcant.github.io/tags/paper/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google File System 论文</title>
+      <link>https://shcant.github.io/2019/06/google-file-system/</link>
+      <pubDate>Thu, 20 Jun 2019 20:21:10 +0800</pubDate>
+      
+      <guid>https://shcant.github.io/2019/06/google-file-system/</guid>
+      <description>推荐最近看到的一本 OceanBase 大佬写的书1，还有这篇文章2，配合论文会更有收获。本书虽是 13 年写的，但对于许多主流的技术均有涉及，作者本人的功力也是非常深厚的。
+ 在论文摘要部分中给出了 GFS 的 4 个决策依据：
+ 组件的失败是频繁的。包括磁盘、内存、网络、系统，甚至人为因素。计算机是不可信的。 文件系统中的文件很大（GB 以上）。这一点决定了之后的一些设计决策，比如块的大小。对于谷歌而言，这是非常自然的，因为谷歌的搜索依赖于倒排索引，数量非常巨大。不过，这个假设时至今日已经不再有力，所以不论是谷歌还是阿里都有自己支持小文件的分布式文件系统。 大部分文件都是追加而非修改操作。不存在随机的数据写入。这个假设熟悉 HDFS 的人应该都不陌生。这实际上是数据仓库的基本条件之一。 应用程序和文件系统 API 的协同设计提高了整个系统的灵活性。这个我觉得指的是 GFS 使用了比较弱的一致性模型，所以应用程序不需要做很多复杂的操作，比如加锁。  Architecture GFS 的架构很简单，但它不是通常意义上的主从结构，而是 master 和 chunkserver，也就是存储元数据和文件数据的两种服务器。这里虽然论文中用了 single 这个词，但 master 是有 replication 机制的。
+ The master maintains all file system metadata. This includes the namespace, access control information, the mapping from files to chunks, and the current locations of chunks. It also controls system-wide activities such as chunklease management, garbage collection of orphaned chunks, and chunkmigration between chunkservers.</description>
+    </item>
+    
+  </channel>
+</rss>

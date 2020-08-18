@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="" class="page">
-  <head>  <title>The Critique of Pure Reason and Feeling</title>
+  <head>  <title>Google File System 论文 | The Critique of Pure Reason and Feeling</title>
   <meta charset='utf-8'>
   <meta name="generator" content="Hugo 0.75.0-DEV" />
   <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
@@ -14,13 +14,17 @@
 </script>
 <meta property = "og:locale" content = "en_US" />
 <meta property="og:type" content="article">
-<meta name="description" content="">
+<meta name="description" content="推荐最近看到的一本 OceanBase 大佬写的书1，还有这篇文章2，配合论文会更有收获。本书虽是 13 年写的，但对于许多主流的技术均有涉及，作者本人的功力也是非常深厚的。
+ 在论文摘要部分中给出了 GFS 的 4 个决策依据：
+ 组件的失败是频繁的。包括磁盘、内存、网络、系统，甚至人为因素。计算机是不可信的。 文件 …">
 <meta name = "twitter:card" content = "summary" />
 <meta name = "twitter:creator" content = "">
-<meta name = "twitter:title" content = "" />
-<meta property = "og:url" content = "https://shcant.github.io/archives/" />
-<meta property = "og:title" content = "" />
-<meta property = "og:description" content = "" />
+<meta name = "twitter:title" content = "Google File System 论文" />
+<meta property = "og:url" content = "https://shcant.github.io/2019/06/google-file-system/" />
+<meta property = "og:title" content = "Google File System 论文" />
+<meta property = "og:description" content = "推荐最近看到的一本 OceanBase 大佬写的书1，还有这篇文章2，配合论文会更有收获。本书虽是 13 年写的，但对于许多主流的技术均有涉及，作者本人的功力也是非常深厚的。
+ 在论文摘要部分中给出了 GFS 的 4 个决策依据：
+ 组件的失败是频繁的。包括磁盘、内存、网络、系统，甚至人为因素。计算机是不可信的。 文件 …" />
 <meta property = "og:image" content = "https://shcant.github.io/images/thumbnail.png" />
 <link rel='apple-touch-icon' sizes='180x180' href='https://shcant.github.io/icons/apple-touch-icon.png'>
 <link rel='icon' type='image/png' sizes='32x32' href='https://shcant.github.io/icons/favicon-32x32.png'>
@@ -30,7 +34,7 @@
 <meta name="msapplication-TileColor" content="#002538">
 <meta name="theme-color" content="#002538">
 
-  <link rel='canonical' href='https://shcant.github.io/archives/'>
+  <link rel='canonical' href='https://shcant.github.io/2019/06/google-file-system/'>
 
     
 
@@ -101,30 +105,34 @@
 
 <div class = 'grid-inverse wrap content'>
   <article class='post_content'>
-    <h1 class='post_title'></h1><div class = 'post_meta'>
+    <h1 class='post_title'>Google File System 论文</h1><div class = 'post_meta'>
   <svg class="icon">
     <use xlink:href="#calendar"></use>
   </svg>
   <span class="post_date">
-    May 28, 2019</span>
+    Jun 20, 2019</span>
+  <a href = 'https://shcant.github.io/tags/gfs' class = 'post_tag button button_translucent'>GFS
+  </a>
+  <a href = 'https://shcant.github.io/tags/paper' class = 'post_tag button button_translucent'>Paper
+  </a>
 </div>
 
     <div class='post_share'>
   Share on:
-  <a href="https://twitter.com/intent/tweet?text=&url=https%3a%2f%2fshcant.github.io%2farchives%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+  <a href="https://twitter.com/intent/tweet?text=Google%20File%20System%20%e8%ae%ba%e6%96%87&url=https%3a%2f%2fshcant.github.io%2f2019%2f06%2fgoogle-file-system%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
     <svg class="icon">
       <use xlink:href="#twitter"></use>
     </svg>
   </a>
   
-  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fshcant.github.io%2farchives%2f&t=" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fshcant.github.io%2f2019%2f06%2fgoogle-file-system%2f&t=Google%20File%20System%20%e8%ae%ba%e6%96%87" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
     <svg class="icon">
       <use xlink:href="#facebook"></use>
     </svg>
   </a>
   <script>
     function shareViaLinkedin() {
-      window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent("https://shcant.github.io/archives/"), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+      window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent("https://shcant.github.io/2019/06/google-file-system/"), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
     }
   </script>
   <a href="#linkedinshare" id = "linkedinshare" class="linkedin" title="Share on LinkedIn" rel="nofollow" onclick="shareViaLinkedin()">
@@ -132,7 +140,7 @@
       <use xlink:href="#linkedin"></use>
     </svg>
   </a>
-  <a href="https://shcant.github.io/archives/" title="Copy Link" class="link link_yank">
+  <a href="https://shcant.github.io/2019/06/google-file-system/" title="Copy Link" class="link link_yank">
     <svg class="icon">
       <use xlink:href="#yank"></use>
     </svg>
@@ -141,6 +149,126 @@
 
     
     
+    <h2>Overview</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#architecture">Architecture</a>
+      <ul>
+        <li><a href="#chunk-size">Chunk Size</a></li>
+        <li><a href="#meta-data">Meta Data</a></li>
+        <li><a href="#operation-log">Operation Log</a></li>
+        <li><a href="#consistency-model">Consistency Model</a></li>
+      </ul>
+    </li>
+    <li><a href="#system-interactions">System Interactions</a>
+      <ul>
+        <li><a href="#leases-and-mutation-order">Leases and Mutation Order</a></li>
+        <li><a href="#decouple-the-flow">decouple the flow</a></li>
+        <li><a href="#atomic-record-appends">Atomic Record Appends</a></li>
+        <li><a href="#snapshot">Snapshot</a></li>
+      </ul>
+    </li>
+    <li><a href="#master">Master</a>
+      <ul>
+        <li><a href="#namespace-management-and-locking">Namespace Management and Locking</a></li>
+        <li><a href="#garbage-collection">Garbage Collection</a></li>
+        <li><a href="#stale-replica-detection">Stale Replica Detection</a></li>
+      </ul>
+    </li>
+    <li><a href="#fault-tolerance">Fault tolerance</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+    <p>推荐最近看到的一本 OceanBase 大佬写的书<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，还有这篇文章<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>，配合论文会更有收获。本书虽是 13 年写的，但对于许多主流的技术均有涉及，作者本人的功力也是非常深厚的。</p>
+<hr>
+<p>在论文摘要部分中给出了 GFS 的 4 个决策依据：</p>
+<ul>
+<li>组件的失败是频繁的。包括磁盘、内存、网络、系统，甚至人为因素。计算机是不可信的。</li>
+<li>文件系统中的文件很大（GB 以上）。这一点决定了之后的一些设计决策，比如块的大小。对于谷歌而言，这是非常自然的，因为谷歌的搜索依赖于<strong>倒排索引</strong>，数量非常巨大。不过，这个假设时至今日已经不再有力，所以不论是谷歌还是阿里都有自己支持小文件的分布式文件系统。</li>
+<li>大部分文件都是追加而非修改操作。不存在随机的数据写入。这个假设熟悉 HDFS 的人应该都不陌生。这实际上是数据仓库的基本条件之一。</li>
+<li>应用程序和文件系统 API 的协同设计提高了整个系统的灵活性。这个我觉得指的是 GFS 使用了比较弱的一致性模型，所以应用程序不需要做很多复杂的操作，比如加锁。</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<p>GFS 的架构很简单，但它不是通常意义上的主从结构，而是 master 和 chunkserver，也就是存储元数据和文件数据的两种服务器。这里虽然论文中用了 single 这个词，但 master 是有 replication 机制的。</p>
+<blockquote>
+<p>The master maintains all file system metadata. This includes the <strong>namespace, access control information, the mapping from files to chunks, and the current locations of chunks</strong>. It also controls system-wide activities such as chunklease management, garbage collection of orphaned chunks, and chunkmigration between chunkservers. The master periodically communicates with each chunkserver in HeartBeat messages to give it instructions and collect its state.</p>
+<p>GFS client code linked into each application implements the file system API and communicates with the master and chunkservers to read or write data on behalf of the application. <strong>Clients interact with the master for metadata operations</strong>, but all data-bearing communication goes directly to the chunkservers.</p>
+<p><strong>Neither the client nor the chunkserver caches file data.</strong> Client caches offer little benefit because most applications stream through huge files or have working sets too large to be cached. Not having them simplifies the client and the overall system by eliminating cache coherence issues. (Clients do cache metadata, however.) Chunkservers need not cache file data because chunks are stored as local files and so Linux’s buffer cache already keeps frequently accessed data in memory.</p>
+</blockquote>
+<p>GFS 的单点 master 决定了它必须减少 master 的负载，因此客户端在得到了元数据信息之后，会进行缓存，从而避免和 master 通信。另外，客户端在获取元信息时也会尽可能多的获取 chunk 的信息，这样就减少了重复通信。</p>
+<p>master 给每个 chunkserver 一个唯一的标识符，这个在 hdfs 里就是 clusterId，可以在<code>dfs.namenode.data.dir</code>配置的目录下的 current/version 里找到。</p>
+<p>一个大致的读流程是这样的：首先，客户端根据固定
+的 Chunk 大小把文件名和程序指定的字节偏移转换成文件的 Chunk 索引。然后它把文件名和 Chunk 索引发送给 Master 节点。Master 节点将相应的 Chunk 标识和副本的位置信息发给客户端，客户端用文件名和 Chunk 索引作为 key 缓存这些信息。</p>
+<p>在实际中我们的客户端不太可能直连集群，这里面除了网络通信的问题，还有安全问题。</p>
+<h3 id="chunk-size">Chunk Size</h3>
+<p>在 GFS 中设计的分块大小是 64MB（Hadoop 也效仿了，后来改成了 128MB）。为什么要选择一个大于文件块大小的分块呢？主要有两个原因：</p>
+<ul>
+<li>元数据信息变小。这可以保证 master 可以将所有元数据载入内存，同时客户端可以缓存更多的元信息；</li>
+<li>减少通信。由于前面假设存储的文件通常是大文件，因此可以保证尽可能多地读写同一个块的内容。</li>
+</ul>
+<p>但是，更大的块会造成数据的热点问题。但这主要是因为小文件的密集访问导致的（大文件我们可以错开各个块的访问）。</p>
+<h3 id="meta-data">Meta Data</h3>
+<p>元数据分为 3 类：文件和 Chunk 的命名空间、文件和 Chunk 的对应关系、每个 Chunk 副本的存放地点。这些元数据是保存在内存里的，前两者也会存储<strong>变更日志</strong>。为什么副本的位置不需要呢？还是因为组件是很容易崩溃的，因此 GFS 采用轮询来获取这个信息（也就是 hdfs 的 BlockReport），而没有进行持久化。</p>
+<p>实际上，论文中也指出，他们在一开始也尝试过持久化 chunk 的位置信息，但是并不理想。显然，持久化意味着一致性问题，在 chunkserver 上下线甚至更名的时候，都是很麻烦的。由于 master 没有一致性的全局数据视图（换句话说，就是没有整个集群全部的有效信息），所以我们有可能在读写数据时出错，这时就需要实现一些容错的机制。</p>
+<h3 id="operation-log">Operation Log</h3>
+<p>这个操作日志的设计就不用说了，基本上就是数据库里的老生常谈了，包括 CheckPoint，分组提交等等。Checkpoint 文件以压缩 B-树存储，可以直接映射到内存中。按照论文的说法，诸如 CheckPoint 的生成和日志的切换都是在一个新的线程里完成的，对应的是 hdfs 的 Secondary Name Node——实际上通常会被放在另一个服务器中，从而彻底的避免对 master 的 delay。</p>
+<h3 id="consistency-model">Consistency Model</h3>
+<p>一致性是 GFS 的核心问题之一。参考论文给出的图：</p>
+<p><img src="/images/16dbdba27b18391e.png" alt=""></p>
+<p>这里分为两种：一致（consistent）和明确（defined）。这个一致性定义不是针对副本的，而是客户端：如果一个 region 对于所有的客户端看到的数据都是一样的，那么就认为是图中的 consistent；而 defined 的要求更高，不仅是 consistent，而且必须要保证写入有效（客户端可以看到所有写入的内容）。典型的一致但不明确的场景是，两个客户端同时写位置 A，数据的内容取决于调度的顺序，但客户端看到的数据都是相同的。</p>
+<p><a href="https://www.zhihu.com/question/20485173">GFS，一致性模型里，“已定义”和“不一致”具体表示的什么含义？</a></p>
+<p>如果失败，显然会不一致，因为存在部分节点已写部分节点未写的情况。但为什么并发追加成功了也会造成<strong>部分的不一致</strong>呢？</p>
+<blockquote>
+<p>Data mutations may be writes or record appends. A write causes data to be written at an application-specified file offset. A record append causes data (the “record”) to be appended atomically <strong>at least once</strong> even in the presence of concurrent mutations, but at an offset of GFS’s choosing (Section 3.3).</p>
+</blockquote>
+<p>这里出现了一个分布式系统的术语——至少一次。至少一次和重试是紧密相关的。当 chunkserver 存在暂时的不可用时，重试可以保证最终写入成功。写入和追加的区别在于，追加在重试时不是从固定的 offset 开始的。比如，如果之前已经写入成功，但是返回追加失败，那么会从下一个 offset 开始追加。因此，可能会出现可能在副本 A 上追加成功，B 上追加失败，第二次重试成功的情况。此时，<strong>所有副本不能保证相等</strong>。换而言之，某些副本可能会包含重复的数据。</p>
+<p>副本不一致是一件比较违反直觉的事情。因此 GFS 可以说一致性非常松散（relaxed）。即前面图中的，明确但不一致的状态。但这可以在应用层通过数据的校验和来抛弃重复数据，以及 Checkpoint 来保证数据的正确性。另外非幂等操作也可以通过增加唯一标识的方式来避免。</p>
+<p>可以看到，GFS 没有采用 2PC 来进行多副本的复制，这意味着各个副本可能存在不一致性。</p>
+<h2 id="system-interactions">System Interactions</h2>
+<h3 id="leases-and-mutation-order">Leases and Mutation Order</h3>
+<p>这一部分在 Hadoop 里实现差异比较大。在 GFS 中，租约是一种针对每个 chunk 的委托，将多副本协调的权力交给了其中一个副本，从而减少 master 的压力。<strong>租约实际上是 master 上的一种锁</strong>。持有租约的 chunkserver 会序列化对 chunk 的修改操作来保证次序。但在 HDFS 里，租约是颁给客户端的，它是客户端写和创建文件的凭据。显然，如果客户端独占了该文件，那么就不存在并发写入的问题了。Hadoop 的一大特点就是不支持并发写。GFS 后来的复盘也说明，这是一个英明的决定<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>。</p>
+<h3 id="decouple-the-flow">decouple the flow</h3>
+<p>GFS 分离了数据流和控制流。但在 HDFS 里，我们知道控制信息和数据都是通过某个离客户端较近的 datanode 发送的。但数据的 pipeline 是相同的，因为这可以最大化网络传输的效率。</p>
+<h3 id="atomic-record-appends">Atomic Record Appends</h3>
+<p>这个原子不是指多节点的原子提交，而指的是单机上的写入操作本身不能被再分块。</p>
+<p>当跨多个 region 时，写入操作不是原子性的。其实追加本身也有同样的问题，但 GFS 通过填充 padding 的技巧规避掉了。我们可能希望在一个文件写入的位置和长度超过了这个 chunk，此时 GFS 会填充 padding，也就是说，强制从一个新的 chunk 开始（之前的块都用 padding 填充）来保证写入是原子的。这个技巧有点重剑无锋的感觉，很简单，但是很实用，可以保证许多麻烦的一致性问题。</p>
+<p>为了限制填充的大小，GFS 会限制原子追加的大小。</p>
+<h3 id="snapshot">Snapshot</h3>
+<p>这个使用 COW 的快照机制和我们想的差不多，就是针对当前快照的目录或者文件做标记，从而在下次写入请求之前进行重定向，就地（指的是在 chunkserver 上）创建一个新的副本。唯一需要注意的是，master 在收到快照请求后，它会立即取消快照对应文件的所有租约。这样就报证了之后所有的写都可以被 master 先收到。</p>
+<h2 id="master">Master</h2>
+<h3 id="namespace-management-and-locking">Namespace Management and Locking</h3>
+<p>GFS 通过给命名空间增加读写锁来保证多线程并发不受干扰。这里只需要获取父目录的读锁，就可以保证父目录不被删除或者改名。</p>
+<h3 id="garbage-collection">Garbage Collection</h3>
+<p>GFS 的垃圾回收是惰性的。首先，它隐藏而不是直接删除元数据；其次，它不发送删除消息（因为可能会丢失），而是等待握手时将 chunk 失效的信息发送出去。延迟回收的缺点是不能获得即时的空间调优，但 GFS 论文里也提到，可以通过设置命名空间不同的回收策略来达到优化的目的，或者显式的再次删除一个已经删除的文件。</p>
+<h3 id="stale-replica-detection">Stale Replica Detection</h3>
+<p>对于过期的副本，GFS 通过版本号来确定（这有点像 MVCC）。并且在垃圾回收中，可以移除所有过期的副本。</p>
+<blockquote>
+<p>If the master sees a version number greater than the one in its records, the master assumes that it failed when granting the lease and so takes the higher version to be up-to-date.</p>
+</blockquote>
+<p>不太清楚什么时候 master 会看到一个比自己高的版本号。难道是 master 宕机的时候？</p>
+<h2 id="fault-tolerance">Fault tolerance</h2>
+<p>容错是分布式系统的核心问题。GFS 在高可用上的措施是非常简单的，和 MySQL 非常像，也就是 Checkpoint 加上 edit log 的模式。</p>
+<p>Master 是具有高可用机制的，存在外部的监控程序来进行 master 的替换：</p>
+<blockquote>
+<p>If its machine or disk fails, monitoring infrastructure outside GFS starts a new master process elsewhere with the replicated operation log. Clients use only the canonical name of the master (e.g. gfs-test), which is a DNS alias that can be changed if the master is relocated to another machine.</p>
+</blockquote>
+<p>但这个机制一直没有被 hadoop 引入。直到后来 hdfs 才有了 Standby NameNode 的高可用机制（我记得好像是华为的大佬贡献的）。另外 GFS 里还提到了 shadow master，它是 master 的只读副本，相当于真正的主从结构。</p>
+<h2 id="references">References</h2>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><em>大规模分布式存储系统:原理解析与架构实战</em> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://mp.weixin.qq.com/s/GuJ6VqZJy3ONaVOWvQT9kg">从 GFS 失败的架构设计来看一致性的重要性</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="https://queue.acm.org/detail.cfm?id=1594206">GFS: Evolution on Fast-forward</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
   </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
@@ -156,9 +284,6 @@
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
       
-      <li>
-        <a href="https://shcant.github.io/2019/06/google-file-system/" class="nav-link">Google File System 论文</a>
-      </li>
       <li>
         <a href="https://shcant.github.io/2018/03/typescript-debug/" class="nav-link">如何调试 Typescript 源代码</a>
       </li>
